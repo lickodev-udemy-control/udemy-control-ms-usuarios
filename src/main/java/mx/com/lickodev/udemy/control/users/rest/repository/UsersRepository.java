@@ -1,4 +1,4 @@
-package mx.com.lickodev.udemy.control.users.repository;
+package mx.com.lickodev.udemy.control.users.rest.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
@@ -19,5 +19,7 @@ import mx.com.lickodev.udemy.control.commons.entity.users.User;
 public interface UsersRepository extends JpaRepository<User, Long> {
 
 	public IUserDTO findByUserName(@Param("userName") String userName);
+
+	public boolean existsByUserName(@Param("userName") String userName);
 
 }
